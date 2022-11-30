@@ -1,12 +1,11 @@
 import * as React from "react";
-import { Toggle } from "../../ui/toggle/Toggle"
+import { Toggle } from "../../ui/toggle/Toggle";
 import { MdOutlineDragIndicator } from "react-icons/md";
 import Checkbox from "../../ui/checkbox/Checkbox";
 import { Game } from "../../../types/gameData";
 import { DraggableProvided, DraggableStateSnapshot } from "react-beautiful-dnd";
-import { useSelector } from "react-redux"
+import { useSelector } from "react-redux";
 import { selectMultipleGames } from "../../../redux/features/multiSelectSlice";
-
 
 interface GameListProps {
   item: Game;
@@ -21,15 +20,16 @@ const GameListElement = ({
   provided,
   snapshot,
   handleClick,
-  isGhosting
+  isGhosting,
 }: GameListProps) => {
+  const selectMultiGames = useSelector(selectMultipleGames);
 
-  const selectMultiGames = useSelector(selectMultipleGames)
-
-  const isSelected = selectMultiGames.find((id) => id === (item?.gameID).toString())
+  const isSelected = selectMultiGames.find(
+    (id) => id === (item?.gameID).toString()
+  );
 
   return (
-    <div
+    <li
       onClick={handleClick}
       ref={provided.innerRef}
       {...provided.draggableProps}
@@ -37,29 +37,26 @@ const GameListElement = ({
       key={item?.gameID}
       id={(item?.gameID).toString()}
       className={`
-      ${(isSelected && isGhosting && !snapshot.isDragging) ? "list-item--dragging" : null}
-      ${(isSelected) ? "list-item--selected" : null}
+      ${
+        isSelected && isGhosting && !snapshot.isDragging
+          ? "list-item--dragging"
+          : null
+      }
+      ${isSelected ? "list-item--selected" : null}
       list-item
-        `}
-    >
+        `}>
       <div className="list-item__providers">
         <MdOutlineDragIndicator className="list-item__icon" />
         <div className="checkbox">
-          <Checkbox
-            id={item?.gameID.toString()}
-            isSelected={isSelected}
-          />
+          <Checkbox id={item?.gameID.toString()} isSelected={isSelected} />
         </div>
         <div className="list-item__providers__name">{item?.providerName}</div>
       </div>
       <div className="list-item__details">
         <div className="list-item__details__name">{item?.gameName}</div>
-        <Toggle
-          id={item?.gameID.toString()}
-          enabledGame={item?.gameEnabled}
-        />
+        <Toggle id={item?.gameID.toString()} enabledGame={item?.gameEnabled} />
       </div>
-    </div>
+    </li>
   );
 };
 
