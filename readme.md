@@ -15,4 +15,5 @@ Typescript, React, Redux, scss, React-beautiufl-dnd
 - Multi drag and drop support (select and drag multiple items)
 - select/deselect items for drag with left click or for multi select: CTRL + left click || shift + left click || use checkboxes
 - Use checkboxes to select or deselect items
+- upload/remove thumbnail for each individual game
 - Save or discard changes
