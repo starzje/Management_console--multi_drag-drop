@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+@import "./variables";
+@import "../components/ui/toggle/toggle.scss";
+@import "../components/ui/spinner/spinner.scss";
+@import "../components/ui/modal/modal.scss";
+@import "../components/ui/button/button.scss";
+@import "../components/layout/gameList/gameList.scss";
+@import "../components/layout/displayInformation/displayInformation.scss";
+@import "../components/ui/checkbox/checkbox.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+}
+
+body {
+  background: $bg-background-primary;
+  background: $bg-gradient;
+  background-repeat: no-repeat;
+  padding-top: 2em;
+}
+
+.disable_scroll {
+  overflow: hidden;
+}
+
+.message_information {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-top: 2.5em;
+
+  &--error {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 2.5em;
+
+    color: rgb(255, 255, 255);
+  }
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 100em;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.error-message {
+  margin: 0 auto;
+  color: rgb(201, 59, 59);
+  text-align: center;
+}
+
+@media only screen and (max-width: 970px) {
+  .list-item {
+    padding: 0 2em;
+  }
+}

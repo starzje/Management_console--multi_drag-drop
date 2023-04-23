@@ -1,0 +1,148 @@
+.list-item__toggle {
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+.list-item__toggle span span {
+  display: none;
+}
+
+@media only screen {
+  .list-item__toggle {
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    overflow: visible;
+    padding: 0;
+    margin-left: -70px;
+    cursor: pointer;
+    width: 40px;
+  }
+
+  .list-item__toggle * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .list-item__toggle label,
+  .list-item__toggle > span {
+    line-height: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  .list-item__toggle input:focus ~ a,
+  .list-item__toggle input:focus + label {
+    outline: none;
+  }
+  .list-item__toggle label {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 100%;
+  }
+  .list-item__toggle input {
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+  }
+  .list-item__toggle > span {
+    position: absolute;
+    left: -50px;
+    width: 100px;
+    margin: 0;
+    padding-right: 50px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .list-item__toggle > span span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: block;
+    width: 50%;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 0.9em;
+    width: 100%;
+    left: 22%;
+    top: -1px;
+    opacity: 0;
+  }
+  .list-item__toggle a {
+    margin-left: 0.5px;
+    position: absolute;
+    right: 50%;
+    z-index: 4;
+    display: block;
+    height: 100%;
+    padding: 0;
+    left: 0;
+    width: 18px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  .list-item__toggle > span span:first-of-type {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    left: 45%;
+  }
+
+  .list-item__toggle > span:before {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 100%;
+    position: absolute;
+    left: 50px;
+    top: -1px;
+    background-color: #f85252;
+    border: none;
+    border-radius: 30px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .list-item__toggle input:checked ~ a {
+    border-color: #fff;
+    left: 100%;
+    margin-left: -42px;
+  }
+  .list-item__toggle input:checked ~ span:before {
+    border-color: #00d14d;
+    box-shadow: inset 0 0 0 30px #00d14d;
+  }
+  .list-item__toggle input:checked ~ span span:first-of-type {
+    opacity: 0;
+  }
+  .list-item__toggle input:checked ~ span span:last-of-type {
+    opacity: 1;
+    color: #fff;
+  }
+
+  .list-item__toggle {
+    width: 60px;
+    height: 27px;
+  }
+  .list-item__toggle a {
+    width: 27px;
+  }
+  .list-item__toggle > span {
+    height: 29px;
+    line-height: 28px;
+  }
+  .list-item__toggle input:checked ~ a {
+    left: 79px;
+  }
+  .list-item__toggle > span span {
+    font-size: 1.1em;
+  }
+  .list-item__toggle > span span:first-of-type {
+    left: 43%;
+  }
+}

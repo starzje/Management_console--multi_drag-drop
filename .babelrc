@@ -1,29 +1,29 @@
 {
   "presets": [
-      [
-          "@babel/preset-env",
-          {
-              "useBuiltIns": "usage",
-              "corejs": {
-                  "version": "3.10", // mora se poklapati sa instaliranom verzijom (vidi: `package.json`)
-                  "proposals": true
-              },
-              "modules": "auto"
-          }
-      ],
-      "@babel/react",
-      "@babel/typescript"
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": {
+          "version": "3.10", // mora se poklapati sa instaliranom verzijom (vidi: `package.json`)
+          "proposals": true
+        },
+        "modules": "auto"
+      }
+    ],
+    "@babel/react",
+    "@babel/typescript"
   ],
   "plugins": [
-      [
-          // ovo smanjuje veličinu svakog pojedinačnog bundle-a zato jer iz pojedinačnih datoteka uklanjaju boilerplate
-          // kod koji build proces doda u svaku datoteku > taj kod se dodaje u dijeljenu datoteku
-          "@babel/transform-runtime",
-          {
-              "corejs": 3,
-              "regenerator": true
-          }
-      ],
-      "@babel/proposal-class-properties" // služi tome da podrzi typescript feature
+    [
+      // ovo smanjuje veličinu svakog pojedinačnog bundle-a zato jer iz pojedinačnih datoteka uklanjaju boilerplate
+      // kod koji build proces doda u svaku datoteku > taj kod se dodaje u dijeljenu datoteku
+      "@babel/transform-runtime",
+      {
+        "corejs": 3,
+        "regenerator": true
+      }
+    ],
+    "@babel/proposal-class-properties" // služi tome da podrzi typescript feature
   ]
 }

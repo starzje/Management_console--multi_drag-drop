@@ -1,0 +1,10 @@
+node_modules
+build/
+src/public
+!/assets/
+
+# slijedeću datoteku generira webpack
+src/views/partials/html-head--scripts.ejs
+
+# slijedeću datoteku generira CSS builder
+src/views/partials/html-head--style.ejs

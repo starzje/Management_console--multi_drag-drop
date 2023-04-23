@@ -1,0 +1,57 @@
+.modal-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-image__input {
+  display: none;
+}
+
+.modal-image__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal-image__preview {
+  width: 540px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.modal-image__info {
+  margin: 1rem 0;
+}
+
+.modal-image__actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-image__input {
+  display: none;
+}
+
+.modal-image__upload-btn {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-image__upload-btn:hover {
+  background-color: #0056b3;
+}
